@@ -1,0 +1,112 @@
+
+
+/* New Todo Form */
+.new-todo-form {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.new-todo-textarea {
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  resize: none;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+.new-todo-textarea:focus {
+  border-color: #5c6bc0;
+  outline: none;
+}
+
+.add-todo-button {
+  padding: 12px 20px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-todo-button:hover {
+  background-color: #3f4f9f;
+}
+
+/* Todo Board Styling */
+.board {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.column {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 450px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #5c6bc0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.todo-lane {
+  min-height: 150px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+
+
+/* Drag and Drop Styling */
+.column {
+  border: 2px dashed #ccc;
+}
+
+.column.drag-over {
+  border-color: #5c6bc0;
+  background-color: #e3f0ff;
+}
+
+.todo-item.dragging {
+  opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .board {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .column {
+      width: 100%;
+  }
+}

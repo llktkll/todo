@@ -1,0 +1,20 @@
+<div class="new-todo-form">
+    <div class="form-container">
+        <textarea [(ngModel)]="newTodo" placeholder="Enter Todo Item here !!!" class="new-todo-textarea"></textarea>
+        <button (click)="addTodo()" class="add-todo-button">Add Todo</button>
+    </div>
+</div>
+
+<div class="board">
+    <div *ngFor="let status of statusColumns" class="column" (dragover)="onDragOver($event)"
+        (drop)="onDrop($event, status)">
+        <div class="heading">{{ status }}</div>
+
+        <div class="todo-lane">
+            <div *ngFor="let todo of getColumnTodos(status)" class="todo-item" draggable="true"
+                (dragstart)="onDragStart($event, todo.id)">
+                <app-todo-item [todo]="todo"></app-todo-item>
+            </div>
+        </div>
+    </div>
+</div>
